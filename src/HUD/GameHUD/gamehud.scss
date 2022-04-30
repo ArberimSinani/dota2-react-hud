@@ -1,9 +1,9 @@
 .top_side_bar {
-    width: 455px;
+    width: 549px;
     height: 55px;
-    background: rgba(19, 0, 23, 0.9);
+    background: linear-gradient(90deg, rgba(66,251,167,1) 0%, rgba(20,92,59,1) 100%);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     color: white;
     position: absolute;
@@ -20,16 +20,17 @@
         background-image: url('./../Scoreboard/sword.png');
         padding-left:23px;
     }
-
+    
     &.right {
+        background: linear-gradient(90deg, rgba(20,92,59,1) 0%, rgba(66,251,167,1) 100%);
         right: 0;
         .logo_and_type {
             right: unset;
-            left: -92px;
+            left: -20px;
 
             img {
                 left: unset;
-                right: 6px;
+                right: 10px;
             }
 
             .type_color {
@@ -41,32 +42,17 @@
 
     .logo_and_type {
         position: absolute;
-        right:-92px;
-        width: 92px;
+        right:-20px;
+        width: 122px;
         height: 55px;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        background: rgba(19, 0, 23, 0.9);
         img {
             position: relative;
-            left: 6px;
-            max-width: 75px;
-        }
-        .type_color{
-            width: 24px;
-            height: 100%;
-            position: absolute;
-            z-index:999;
-            top:0;
-            right:0;
-            &.radiant {
-                background-color: #16349E;
-            }
-            &.dire {
-                background-color: #BD1313;
-            }
+            left: 10px;
+            max-height: 90%;
         }
     }
 }

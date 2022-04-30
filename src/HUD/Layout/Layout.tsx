@@ -137,7 +137,7 @@ export default class Layout extends React.Component<Props, State> {
           <span>{this.state.text}</span>
 
         </TopSideBar>
-        <ObservedPlayer players={game.players} show={view === 'game'} player={game.player} team={game.player ? (game.player.team_name === "radiant" ? game.map.radiant : game.map.dire) : null} />
+        <ObservedPlayer players={game.players} show={false} player={game.player} team={game.player ? (game.player.team_name === "radiant" ? game.map.radiant : game.map.dire) : null} />
       </>
     );
   }

@@ -34,7 +34,7 @@
     .bo {
         height: 33px;
         width: 100%;
-        background-color: rgba(19, 0, 23, 0.9);
+        background-color: rgba(11, 99, 59, 0.9);
         color: white;
         display: flex;
         align-items: center;
@@ -45,11 +45,12 @@
     .picker_and_logo {
         display: flex;
         flex: 1;
-        background-color: rgba(19, 0, 23, 0.9);
+        background-color: rgba(7, 65, 39, 0.589);
         background-repeat: no-repeat;
         background-position: center;
         justify-content: space-between;
-        background-size: cover;
+        background-size: 60% auto;
+        background-image: url('./tournamentLogo.png');
         .side_pick{
             display: flex;
             flex: 1;
@@ -119,20 +120,24 @@
     margin:0 1.5px;
     &.dire {
         .draft_status {
-            background-color: #BD1313;
+            background-color: #8d4bd1;
         }
     }
     &.radiant {
         .draft_status {
-            background-color: #16349E;
+            background-color: #1436f5;
+
         }
     }
     .player_preview {
         flex: 1;
-        background-color:rgba(19, 0, 23, 0.9);
+        background-color:rgba(7, 65, 39, 0.589);
         display: flex;
         background-position: center;
         background-repeat: no-repeat;
+        &.active {
+            animation: BLINK 2s alternate infinite;  /* IE 10+, Fx 29+ */
+        }
         .background-imgs {
             flex:1;
             opacity:0.3;
@@ -148,7 +153,7 @@
         font-weight: 700;
         font-size: 15px;
         &.active {
-            
+            border: yellow 5px;
         }
         &.hidden {
             height: 7px;
@@ -159,7 +164,7 @@
     display: flex;
     height: 76px;
     width: 1390px;
-    background-color: rgba(19, 0, 23, 0.9);
+    background-color: rgba(7, 65, 39, 0.589);
     color: white;
     position: fixed;
     margin-left:50%;
@@ -168,7 +173,7 @@
     .timer {
         width: 139px;
         height: 100%;
-        background-color: #0E0018;
+        background-color: rgba(11, 99, 59, 0.9);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -215,14 +220,14 @@
         }
         &.radiant {
             .team_info_score {
-                background-color: #16349E;
+                background-color: #1436f5;
                 margin-right: 8px;
             }
         }
         &.dire {
             flex-direction: row-reverse;
             .team_info_score {
-                background-color: #BD1313;
+                background-color: #8d4bd1;
                 margin-left: 8px;
             }
             .team_squad {
@@ -230,4 +235,18 @@
             }
         }
     }
+}
+@keyframes BLINK {
+
+    0%		{background-color: rgba(7, 65, 39, 0.589);}
+    10%		{background-color: rgba(11, 83, 51, 0.589);}
+    20%		{background-color: rgba(13, 99, 60, 0.589);}
+    30%		{background-color: rgba(17, 116, 71, 0.589);}
+    40%		{background-color: rgba(18, 131, 80, 0.589);}
+    50%		{background-color: rgba(22, 153, 94, 0.589);}
+    60%		{background-color: rgba(23, 165, 101, 0.589);}
+	70%		{background-color: rgba(29, 187, 116, 0.589);}
+	80%		{background-color: rgba(31, 204, 126, 0.589);}
+	90%	    {background-color: rgba(38, 233, 145, 0.58);}
+	100%	{background-color: rgba(39, 245, 152, 0.58);}
 }

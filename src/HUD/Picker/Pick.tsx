@@ -19,7 +19,7 @@ const PlayerPick = ({ entry, type, active }: { entry: DraftEntry, type: Faction,
         text = 'PICKING...';
     }
     return <div className={`player_draft ${type} ${active ? 'active' : ''}`}>
-        <div className="player_preview">
+        <div className={`player_preview ${active ? 'active' : ''}`}>
             <div className="background-imgs">
             </div>
             {entry.class ? <video muted={true} autoPlay={true} loop={true} width="123">
@@ -43,7 +43,7 @@ export const PlayerBan = ({ entry, type, active }: { entry: DraftEntry, type: Fa
     if (!entry.class) {
 
         return <div className={`player_ban ${type} ${active ? 'active' : ''}`}>
-            <div className="player_preview" style={{backgroundColor:'#0E0018'}}>
+            <div className="player_preview" style={{backgroundColor:'#042918'}}>
             </div>
         </div>
     }

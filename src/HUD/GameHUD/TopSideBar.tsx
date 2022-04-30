@@ -6,18 +6,18 @@ const TopSideBar = ({ children, type, teamId, show }: { children: any, type: Fac
     return <div className={`top_side_bar ${type === 'radiant' ? 'left':'right'} ${!show ? 'hide':''}`}>
         {type === 'radiant' ? (
         <div className="logo_and_type">
-        <div className={`type_color ${type}`}>
+        {/* <div className={`type_color ${type}`}>
 
-        </div>
+        </div> */}
             <img src={`${apiUrl}api/teams/logo/${teamId}`}/>
         </div>
         ) : null}
         {children}
         {type === 'dire' ? (
         <div className="logo_and_type">
-        <div className={`type_color ${type}`}>
+        {/* <div className={`type_color ${type}`}>
 
-        </div>
+        </div> */}
             <img src={`${apiUrl}api/teams/logo/${teamId}`}/>
         </div>
         ) : null}

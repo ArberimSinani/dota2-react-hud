@@ -11,13 +11,13 @@ const Statistics = ({ player, type, teamId, show}: { player: Player | null, type
     }
     const { gpm, xpm, kills, deaths, assists } = player;
     return <TopSideBar type={type} teamId={teamId} show={show}>
-        <div className="gpm_xpm_container">
+        <div className="gpm_xpm_container" style={{paddingRight: '30px', paddingLeft: '30px'}}>
             GPM <strong className="shadowed-text">{gpm}</strong> / XPM <strong className="shadowed-text">{xpm}</strong>
         </div>
-        <div className="attack">
+        <div className="attack" style={{paddingRight: '30px'}}>
             <strong className="shadowed-text">{player.last_hits}</strong>&nbsp;/&nbsp;<strong className="shadowed-text">{player.denies}</strong>
         </div>
-        <div className="kda">
+        <div className="kda"style={{paddingRight: '30px'}}>
             KDA <strong className="shadowed-text">{kills}</strong> / <strong className="shadowed-text">{deaths}</strong> / <strong className="shadowed-text">{assists}</strong>
         </div>
     </TopSideBar>
