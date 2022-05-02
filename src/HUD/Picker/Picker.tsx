@@ -2,7 +2,7 @@ import React from 'react';
 import { Draft, Faction, TeamDraft } from 'dotagsi';
 import PlayerPick, { PlayerBan } from './Pick';
 
-const TeamPicker = ({ draft, type, active }: { draft?: TeamDraft, type: Faction, active: boolean }) => {
+const TeamPicker = ({ draft, type, active, picking }: { draft?: TeamDraft, type: Faction, active: boolean, picking?: boolean }) => {
     if (!draft) {
         return <div className="team_draft">
             <div className={`players_draft ${type}`}>
@@ -18,7 +18,7 @@ const TeamPicker = ({ draft, type, active }: { draft?: TeamDraft, type: Faction,
     return <div className="team_draft">
         <div className={`players_draft ${type}`}>
             {
-                picks.map(pick => <PlayerPick entry={pick} type={type} active={active && smallestNotPickedOrder === pick.order} />)
+                picks.map(pick => <PlayerPick entry={pick} type={type} active={active && smallestNotPickedOrder === pick.order} picking={picking} />)
             }
         </div>
         <div className="team_draft_info">
@@ -27,7 +27,7 @@ const TeamPicker = ({ draft, type, active }: { draft?: TeamDraft, type: Faction,
     </div>
 }
 
-export const TeamBaner = ({ draft, type, active }: { draft?: TeamDraft, type: Faction, active: boolean }) => {
+export const TeamBaner = ({ draft, type, active, banning }: { draft?: TeamDraft, type: Faction, active: boolean, banning?: boolean }) => {
     if (!draft) {
 
         return <div className={`team_draft_ban ${type}`}>
@@ -40,7 +40,7 @@ export const TeamBaner = ({ draft, type, active }: { draft?: TeamDraft, type: Fa
     return <div className={`team_draft_ban ${type}`}>
         <div className={`players_draft_ban ${type}`}>
             {
-                picks.map(pick => <PlayerBan entry={pick} type={type} active={active && smallestNotPickedOrder === pick.order} />)
+                picks.map(pick => <PlayerBan entry={pick} type={type} active={active && smallestNotPickedOrder === pick.order} banning={banning} />)
             }
         </div>
     </div>

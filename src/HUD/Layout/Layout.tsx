@@ -49,11 +49,11 @@ export default class Layout extends React.Component<Props, State> {
     handleViewType('draft');
     const configHandler = (data: any) => {
       if (!data || !data.view) return;
-      
+
       this.setState({
         text: data.view.info_box,
       });
-      
+
     }
     if (configs.data) {
       configHandler(configs.data);
@@ -89,20 +89,20 @@ export default class Layout extends React.Component<Props, State> {
     //(this.state.sponsor)
     /// DOTA_GAMERULES_STATE_HERO_SELECTION
     let activeTeamBonusTime = 0;
-    if(game.draft.activeteam !== undefined){
-      if(game.draft.activeteam === 2 && game.draft.radiant){
-        activeTeamBonusTime = game.draft.radiant.bonus_time ;
-      } else if (game.draft.activeteam === 3 && game.draft.dire){
+    if (game.draft.activeteam !== undefined) {
+      if (game.draft.activeteam === 2 && game.draft.radiant) {
+        activeTeamBonusTime = game.draft.radiant.bonus_time;
+      } else if (game.draft.activeteam === 3 && game.draft.dire) {
         activeTeamBonusTime = game.draft.dire.bonus_time;
       }
     }
-    
+
     return (
       <>
         <div className="layout">
           <div className={`draft-screen-container ${view === 'draft' ? '' : 'hide'}`}>
             <div className="draft-container">
-              <TeamPicker draft={game.draft.radiant} type={'radiant'} active={game.draft.activeteam === 2} />
+              <TeamPicker draft={game.draft.radiant} type={'radiant'} active={game.draft.activeteam === 2} picking={game.draft.pick} />
               <div className="tournament_info">
                 <div className="bo shadowed-text">
                   {(match && match.matchType) || 'BO2'}
@@ -112,16 +112,15 @@ export default class Layout extends React.Component<Props, State> {
                   <div className={`side_pick right ${game.draft.activeteam === 3 ? 'active' : ''}`}></div>
                 </div>
               </div>
-              <TeamPicker draft={game.draft.dire} type={'dire'} active={game.draft.activeteam === 3} />
+              <TeamPicker draft={game.draft.dire} type={'dire'} active={game.draft.activeteam === 3} picking={game.draft.pick} />
             </div>
             <div className="team_info_container s shadowed-text">
-              <TeamInfo draft={game.draft} team={game.map.radiant} type={'radiant'} players={game.players.filter(player => player.team_name === 'radiant')} />
-
+              <TeamInfo draft={game.draft} team={game.map.radiant} type={'radiant'} active={game.draft.activeteam === 2} players={game.players.filter(player => player.team_name === 'radiant')} banning={!game.draft.pick} />
               <div className="timer">
-                <div className="label shadowed-text">{ game.draft.activeteam_time_remaining ? 'Pick time' : 'Bonus time'}</div>
+                <div className="label shadowed-text">{game.draft.pick ? game.draft.activeteam_time_remaining ? 'Pick time' : 'Bonus time' : game.draft.activeteam_time_remaining ? 'Ban time' : 'Bonus time'}</div>
                 <div className="timer-time shadowed-text">{stringToClock(game.draft.activeteam_time_remaining || activeTeamBonusTime)}</div>
               </div>
-              <TeamInfo draft={game.draft} team={game.map.dire} type={'dire'} players={game.players.filter(player => player.team_name === 'dire')} />
+              <TeamInfo draft={game.draft} team={game.map.dire} type={'dire'} active={game.draft.activeteam === 3} players={game.players.filter(player => player.team_name === 'dire')} banning={!game.draft.pick} />
             </div>
           </div>
           <Scoreboard players={game.players} map={game.map} match={match} show={view === 'scoreboard'} />

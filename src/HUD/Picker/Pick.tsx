@@ -1,7 +1,7 @@
 import React from 'react';
 import { Draft, DraftEntry, Faction, TeamDraft } from 'dotagsi';
 import Snow from "./snowflake.png";
-const PlayerPick = ({ entry, type, active }: { entry: DraftEntry, type: Faction, active: boolean }) => {
+const PlayerPick = ({ entry, type, active, picking }: { entry: DraftEntry, type: Faction, active: boolean, picking?: boolean }) => {
     const order = entry.order + 1;
     let lastPart = 'th';
     if (order === 1) {
@@ -15,11 +15,11 @@ const PlayerPick = ({ entry, type, active }: { entry: DraftEntry, type: Faction,
     if (!entry.class) {
         text = '';
     }
-    if (active) {
+    if (active && picking) {
         text = 'PICKING...';
     }
     return <div className={`player_draft ${type} ${active ? 'active' : ''}`}>
-        <div className={`player_preview ${active ? 'active' : ''}`}>
+        <div className={`player_preview ${active && picking ? 'active' : ''}`}>
             <div className="background-imgs">
             </div>
             {entry.class ? <video muted={true} autoPlay={true} loop={true} width="123">
@@ -37,13 +37,12 @@ const PlayerPick = ({ entry, type, active }: { entry: DraftEntry, type: Faction,
     </div>
 }
 
-export const PlayerBan = ({ entry, type, active }: { entry: DraftEntry, type: Faction, active: boolean }) => {
+export const PlayerBan = ({ entry, type, active, banning }: { entry: DraftEntry, type: Faction, active: boolean, banning?: boolean }) => {
     const order = entry.order + 1;
-
+    console.log(banning)
     if (!entry.class) {
-
         return <div className={`player_ban ${type} ${active ? 'active' : ''}`}>
-            <div className="player_preview" style={{backgroundColor:'#042918'}}>
+            <div className={`player_preview ${active && banning ? 'active': ''}`}>
             </div>
         </div>
     }
