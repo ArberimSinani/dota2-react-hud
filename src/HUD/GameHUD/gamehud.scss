@@ -1,7 +1,7 @@
 .top_side_bar {
     width: 549px;
     height: 55px;
-    background: linear-gradient(90deg, rgba(66,251,167,1) 0%, rgba(20,92,59,1) 100%);
+    background: linear-gradient(90deg, rgb(157, 100, 214) 0%, rgb(107, 32, 182) 100%);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -22,7 +22,7 @@
     }
     
     &.right {
-        background: linear-gradient(90deg, rgba(20,92,59,1) 0%, rgba(66,251,167,1) 100%);
+        background: linear-gradient(90deg, rgb(107, 32, 182) 0%, rgb(157, 100, 214) 100%);
         right: 0;
         .logo_and_type {
             right: unset;

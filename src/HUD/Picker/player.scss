@@ -34,7 +34,7 @@
     .bo {
         height: 33px;
         width: 100%;
-        background-color: rgba(11, 99, 59, 0.9);
+        background-color: rgba(141, 75, 209, 0.9);
         color: white;
         display: flex;
         align-items: center;
@@ -45,7 +45,7 @@
     .picker_and_logo {
         display: flex;
         flex: 1;
-        background-color: rgba(7, 65, 39, 0.589);
+        background-color: rgba(142, 75, 209, 0.819);
         background-repeat: no-repeat;
         background-position: center;
         justify-content: space-between;
@@ -107,7 +107,7 @@
         overflow: hidden;
         width: 36px;
         height: 36px;
-        background-color: #042918;
+        background-color: #4a1680;
         &.active {
             animation: BLINK 2s alternate infinite;  /* IE 10+, Fx 29+ */
         }
@@ -124,7 +124,7 @@
     margin:0 1.5px;
     &.dire {
         .draft_status {
-            background-color: #8d4bd1;
+            background-color: #3ef6a2;
         }
     }
     &.radiant {
@@ -135,7 +135,7 @@
     }
     .player_preview {
         flex: 1;
-        background-color:rgba(7, 65, 39, 0.589);
+        background-color:rgba(142, 75, 209, 0.819);
         display: flex;
         background-position: center;
         background-repeat: no-repeat;
@@ -168,7 +168,7 @@
     display: flex;
     height: 76px;
     width: 1390px;
-    background-color: rgba(7, 65, 39, 0.589);
+    background-color: rgba(142, 75, 209, 0.819);
     color: white;
     position: fixed;
     margin-left:50%;
@@ -177,7 +177,7 @@
     .timer {
         width: 139px;
         height: 100%;
-        background-color: rgba(11, 99, 59, 0.9);
+        background-color: rgba(141, 75, 209, 0.9);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -231,7 +231,7 @@
         &.dire {
             flex-direction: row-reverse;
             .team_info_score {
-                background-color: #8d4bd1;
+                background-color: #3ef6a2;
                 margin-left: 8px;
             }
             .team_squad {
@@ -242,15 +242,16 @@
 }
 @keyframes BLINK {
 
-    0%		{background-color: rgba(7, 65, 39, 0.589);}
-    10%		{background-color: rgba(11, 83, 51, 0.589);}
-    20%		{background-color: rgba(13, 99, 60, 0.589);}
-    30%		{background-color: rgba(17, 116, 71, 0.589);}
-    40%		{background-color: rgba(18, 131, 80, 0.589);}
-    50%		{background-color: rgba(22, 153, 94, 0.589);}
-    60%		{background-color: rgba(23, 165, 101, 0.589);}
-	70%		{background-color: rgba(29, 187, 116, 0.589);}
-	80%		{background-color: rgba(31, 204, 126, 0.589);}
-	90%	    {background-color: rgba(38, 233, 145, 0.58);}
-	100%	{background-color: rgba(39, 245, 152, 0.58);}
+    0%		{background-color: rgba(142, 75, 209, 0.819);}
+    10%		{background-color: rgba(152, 85, 207, 0.819);}
+    20%		{background-color: rgba(162, 95, 205, 0.819);}
+    30%		{background-color: rgba(182, 115, 203, 0.819);}
+    40%		{background-color: rgba(182, 125, 201, 0.819);}
+    40%		{background-color: rgba(182, 135, 201, 0.819);}
+    50%		{background-color: rgba(182, 145, 199, 0.819);}
+    60%		{background-color: rgba(182, 155, 197, 0.819);}
+	70%		{background-color: rgba(182, 165, 195, 0.819);}
+	80%		{background-color: rgba(182, 175, 193, 0.819);}
+	90%	    {background-color: rgba(182, 185, 191, 0.819);}
+	100%	{background-color: rgba(182, 195, 189, 0.819);}
 }

@@ -59,7 +59,9 @@ const ScoreboardPlayer = ({ player }: { player: Player }) => {
             }
         </div>
         { neutralItem ? <div className="neutral-item">
+            <div className="neutral-img">
             {neutralItem.name !== "empty" ? <img src={`./items/${neutralItem.name.replace('item_', '')}.png`} height={57} /> : null}
+            </div>
         </div> : null}
     </div>
 }
